@@ -1,10 +1,10 @@
--- Tạo database
+-- create database
 CREATE DATABASE grpc_demo;
 
--- Kết nối tới database grpc_demo
+-- connect to database
 \c grpc_demo
 
--- Tạo table users
+-- create table users
 CREATE TABLE IF NOT EXISTS users (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -14,10 +14,10 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tạo index cho email
+-- create index on email
 CREATE INDEX IF NOT EXISTS idx_email ON users(email);
 
--- Insert data mẫu
+-- Insert data sample into users table
 INSERT INTO users (name, email, age) VALUES
 ('Hoàng Tiến', 'hoangtien2k3@gmail.com', 25),
 ('Nguyễn Văn A', 'nguyenvana@gmail.com', 30),
